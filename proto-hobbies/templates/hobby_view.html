@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    {% extends "hobby.html" %}
+    {% block body %}
+    <head>
+      <style>
+        h1{
+            color:#010383;
+            font-size: 50px;
+        }
+        p{
+            color:#234a84;
+            font-size:30px;
+        }
+      </style>
+    </head>
+    <body>
+        <h1>view hobby</h1>
+        {% for i in Hobby %}
+        <p>{{i.title}}</p>
+    </body>
+    {% endblock %}
+</html>
