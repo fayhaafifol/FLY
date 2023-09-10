@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    {% extends "protons.html" %}
+    {% block body %}
+    <head>
+        <style>
+           h1{
+            color: #010383;
+            font-size: 50px;
+           }
+
+           .col1{
+            color: #234a84;
+            font-size: 40px;
+           }
+           .col2{
+            color: #2b60b1;
+            font-size: 20px;
+
+           }
+           .col3{
+            color: #4482e0;
+            font-size: 20px;
+           }
+
+        </style>
+    </head>
+    <body>
+        <h1> View Protons </h1>
+        <table>
+            <tr>
+                <th class="col1">Name</th>
+                <th class="col2">Age</th>
+                <th class="col3">track</th>
+            </tr>
+            {% for i in proton %}
+            <tr>
+                <td class="col1">{{ i.name }}</td>
+                <td class="col2">{{ i.age }}</td>
+                <td class="col3">{{ i.track }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+    {% endblock %}
+</html>
