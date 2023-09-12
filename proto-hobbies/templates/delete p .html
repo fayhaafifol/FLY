@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+    {% extends "protons.html" %}
+    {% block body %}
 <head>
 <title>Delete proton</title>
 <style>
@@ -12,9 +14,11 @@
 </style>
 </head>
 <body>         
-
-    <label1 for="name" col class="label">Enter the proton you want delete it:</label1><br><br>
-    <input type="text" id="fname" name="fname" size="10" class="label">
-    <input type="submit" size="30" class="label"> 
+    <form method="post" action="/DeleteProton">
+        <label1 for="name" col class="label">Enter the proton you want delete it:</label1><br><br>
+        <input type="text" id="fname" name="fname" size="10" class="label" required>
+        <input type="submit" size="30" class="label" required> 
+   </form>
 </body>
+{% endblock %}
 </html>

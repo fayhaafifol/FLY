@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    {% block body %} 
 <head>
     <style>
     u{
@@ -39,11 +40,12 @@
         <p>Hobby</p>
     </u></i>
     <pre>            
-        <a href="/add"target="_blank" class="add">add</a>
+        <a href="/AddHobbies"target="_blank" class="add">add</a>
 
-        <a href="/view"target="_blank">view</a>
+        <a href="/ViewHobbies"target="_blank">view</a>
 
-        <a href="/delete"target="_blank" class="delete">delete</a>
+        <a href="/DeleteHobbies"target="_blank" class="delete">delete</a>
     </pre> 
 </body>
+{% endblock %}
 </html>
