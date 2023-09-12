@@ -16,13 +16,38 @@ def getProtons():
 def getHobbies():
     return render_template ("hobby.html" ,hobby=database.hobbies)
 
-@app.route("/AppProtons",methods=["POST"])
+@app.route("/AddProtons")
+def GetAddProton():
+    return render_template ("add proton.html" , proton=database.protons)
+
+@app.route("/AddHobbies")
+def GetAddHobbies():
+    return render_template ("add hobby.html" ,hobby=database.hobbies)
+
+@app.route("/ViewProtons")
+def GetViewProton():
+    return render_template ("proton_view.html" , proton=database.protons)
+
+@app.route("/ViewHobbies")
+def GetViewHobbies():
+    return render_template ("hobby_view.html" ,hobby=database.hobbies)
+
+@app.route("/DeleteProtons")
+def GetDeleteProton():
+    return render_template ("delete p.html" , proton=database.protons)
+
+@app.route("/DeleteHobbies")
+def GetDeleteHobbies():
+    return render_template ("delete h.html" ,hobby=database.hobbies)
+
+
+@app.route("/AddProtons/add",methods=["POST"])
 def addProton(protonName: str, protonAge: int, protonTrack: str):
         protonName = request.form.get("protonName")
         protonAge = request.form.get("protonAge")
         protonTrack= request.form.get("protonTrack")
         database.addProton(protonName,protonAge,protonTrack)
-        return redirect("/AppProtons")
+        return redirect("/AddProtons")
 
 @app.route("/AddHobbies",methods=["POST"])
 def addHobby(hobbyTitle: str, imagePAth: str):
@@ -32,25 +57,19 @@ def addHobby(hobbyTitle: str, imagePAth: str):
         return redirect("/AddHobbies")
 
 
-#@app.route("/hobbies/<hobbyTitle>/<protonName>")
-#def matchProtoHobby(hobbyTitle: str,protonName: str):
-  #TODO
-#    pass
-
-#Views the hobby title, image and protons who like it
 @app.route("/ViewHobbies/<hobbyTitle>")
 def viewHobby(hobbyTitle: str):
     database.findHobby(hobbyTitle)
-    return render_template("homepage.html")
+    return redirect("/ViewHobbies")
 
 @app.route("/ViewProtons/<protonName>")
 def viewProton(protonName: str):
     database.findProton(protonName)
-    return render_template("homepage.html")
+    return redirect("/ViewProtons")
 
 @app.route("/DeleteHobbies/<hobbyTitle>",methods=["DELETE"])
 def deleteHobby(hobbyTitle: str):
-     hobbyTitle=request.form.get("hobby")
+     hobbyTitle=request.form.get("hobbyTitle")
      database.deleteHobby(hobbyTitle)
      return redirect("/DeleteHobbies")
 

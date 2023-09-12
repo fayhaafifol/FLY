@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+        {% extends "hobby.html" %}
+        {% block body %}
 <head>
 <title>Add hobby</title>
 <style>
@@ -20,8 +22,9 @@
 
         </style>
         <label1 for="name" col class="label">Enter your hoppy:</label1><br><br>
-        <input type="text" id="fname" name="fname" size="10" class="label">
-        <input type="submit" size="30" class="label"> 
+        <input type="text" id="fname" name="fname" size="10" class="label" required>
+        <input type="submit" size="30" class="label" required> 
 
 </body>
+{% endblock %}
 </html>

@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html>
+    {% extends "protons.html" %}
+    {% block body %}
 <head>
     <title>Add proton</title>
 <style>
@@ -18,10 +20,15 @@
         }
 
     </style>
-    <label for="name" col class="label">Enter your name:</label><br>
-    <input type="text" id="proton" name="pname" size="30" class="label">
-    <input type="submit" size="30" class="label"><br><br><br><br><br><br>
+    <form method="post" action="/AppProtons">
+        <label for="name" col class="label">Enter your name:</label><br>
+        <input type="text" id="name" name="protonName" size="30" class="label" required>
+        <label for="name" col class="label">Enter your age:</label><br>
+        <input type="text" id="name" name="protonAge" size="30" class="label" required> 
+        <input type="submit" size="30" class="label"><br><br><br><br><br><br>
+    </form>
+   
           
-    
+    {% endblock %}
 </body>
 </html>

@@ -2,10 +2,11 @@
 <html>
 <head>
     <title>Outing Protons</title>
+    <meta charset="utf-8" />
     <style> 
-        p{
-            color: rgb(10, 212, 248);
-            font-size: 50px;
+        .hello{
+            color: #0ad4f8;
+            font-size: 60px;
             text-align: center;
 
         }
@@ -37,12 +38,19 @@
           background-image: url('outting.jpg');
         }
 
-        </style>        
-    <p>Hellooooo in outing Protons</p>
-        <div>
-            <a href="/hobbies"target="_blank" class="hobby">Hobbys</a>
+        </style>  
         
-            <a href="/protons"target="_blank" >Protons</a>
+        <div algin="middle" class="bd-example">
+ 
+            <img src="{{url_for('static', filename='outting.jpg')}}" />
+        </div>        
+    <p><a href="/" class="hello" >Hellooooo in outing Protons</a></p>
+    <hr/>
+
+        <div>
+            <a href="/GetHobbies"target="_blank" class="hobby">Hobbys</a>
+        
+            <a href="/GetProtons"target="_blank" >Protons</a>
         </div>
     
     
